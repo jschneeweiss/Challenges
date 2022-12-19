@@ -1,0 +1,30 @@
+.rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+} 
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 10px;    
+    background-color: #414545;
+    color: #959eac;
+    width: 25px;
+    height: 25px;  
+    text-align: center;
+    cursor: pointer;    
+}
+
+.circle-hover:hover {
+    background-color: #7c8798;
+    color: #ffffff; 
+}
+
+.circle-clicked {
+    background-color: #fb7413;
+    color: #ffffff;
+}
