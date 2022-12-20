@@ -28,3 +28,16 @@
     background-color: #fb7413;
     color: #ffffff;
 }
+
+.star-size {
+    width: 15px;
+    height: 15px;
+}
+
+.star-color-unclicked {
+    filter: invert(69%) sepia(24%) saturate(178%) hue-rotate(177deg) brightness(88%) contrast(82%);
+}
+
+.star-color-clicked {
+    filter: invert(62%) sepia(29%) saturate(7103%) hue-rotate(351deg) brightness(100%) contrast(99%);
+}
