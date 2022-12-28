@@ -10,10 +10,6 @@ const Circle = ({ svg, svgSource, numbers }) => {
         }
 
         const toggleButtonColor = (id) => {
-                console.log('id', id);
-                let test = document.getElementById(id);
-                console.log('test: ', test);
-                console.log('selectedRating: ', selectedRating);
                 document.getElementById(id).classList.add("circle-clicked");
                 document.getElementById(id).classList.remove("circle-hover");
 
