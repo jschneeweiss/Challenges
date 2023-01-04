@@ -1,0 +1,26 @@
+.voted-container {    
+    flex-direction: column;    
+    text-align: center;
+    background-color: #252d37;
+    border-radius: 25px;
+    padding: 30px;    
+    width: 300px;    
+    height: 300px; 
+}
+
+.voted-text {
+    color: #949dab;
+}
+
+.thank-you {
+    color: #ffffff;
+}
+
+.selectedRating {
+    background-color: #2d3641;
+    border-radius: 50px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    display: inline-block;
+    color: hsl(25, 97%, 53%);
+}
