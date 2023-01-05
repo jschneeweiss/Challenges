@@ -8,10 +8,17 @@ const Home = () => {
     const ratingNumbers = [1, 2, 3, 4, 5];    
     const navigate = useNavigate();
 
-    const [rating, setRating] = useState(''); 
+    const [rating, setRating] = useState(0); 
 
     const setClickedRatingFunction = (rating) => {
         setRating(rating);
+    }
+
+    const navigateToVoted = () => {
+        if (rating === 0)
+            alert("You do not choose a rating number!");
+        else
+            navigate('/voted', { state: { rating: rating } });
     }
 
     return (
@@ -25,7 +32,7 @@ const Home = () => {
             </p>
             <Circle svg='false' rating={setClickedRatingFunction} numbers={ratingNumbers}></Circle>
             
-            <button onClick={() => navigate('/voted', { state: { rating: rating } })} className='button'>SUBMIT</button>
+            <button onClick={navigateToVoted} className='button'>SUBMIT</button>
         </div>
     );
 }
