@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import starSvg from '../../img/icon-star.svg';
 import Circle from '../circle/circle.component';
 
-
 const Home = () => {
-    const ratingNumbers = [1, 2, 3, 4, 5];
-    const svgSource = './icon-star.svg';
+    const ratingNumbers = [1, 2, 3, 4, 5];    
     const navigate = useNavigate();
 
     const [rating, setRating] = useState(''); 
@@ -17,7 +16,7 @@ const Home = () => {
 
     return (
         <div className='main-container'>
-            <Circle svg='true' svgSource={svgSource}></Circle>
+            <Circle svg='true' svgSource={starSvg}></Circle>
             <h1>How did we do?</h1>
 
             <p className="main-text">

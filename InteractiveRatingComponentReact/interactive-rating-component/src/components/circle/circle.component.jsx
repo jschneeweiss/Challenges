@@ -1,4 +1,3 @@
-import React from 'react';
 import './circle.styles.css';
 
 // const Circle = ({ svg, svgSource, numbers, props }) => {

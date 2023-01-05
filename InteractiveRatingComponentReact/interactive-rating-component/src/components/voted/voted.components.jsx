@@ -1,14 +1,14 @@
 import { useLocation } from 'react-router-dom';
 
+import thankYouSvg from '../../img/illustration-thank-you.svg';
 import './voted.styles.css';
 
-const Voted = () => {    
-    const svgSource = './illustration-thank-you.svg';
+const Voted = () => {        
     const location = useLocation();
 
     return (
-        <div className='voted-container'>
-            <img className='thank-you' src={svgSource} alt='Thank you' />            
+        <div className='voted-container'>            
+            <img className='thank-you' src={thankYouSvg} alt='Thank you' />
             <div className='selectedRating'>
                 You selected <span id="selectedRating">{location.state.rating}</span> out of 5
             </div>
