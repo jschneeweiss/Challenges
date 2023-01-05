@@ -10,7 +10,7 @@ const Voted = () => {
         <div className='voted-container'>            
             <img className='thank-you' src={thankYouSvg} alt='Thank you' />
             <div className='selectedRating'>
-                You selected <span id="selectedRating">{location.state.rating}</span> out of 5
+                You selected {location.state.rating} out of 5
             </div>
             <h2 className='thank-you'>Thank you!</h2>
             <p className='voted-text'>
