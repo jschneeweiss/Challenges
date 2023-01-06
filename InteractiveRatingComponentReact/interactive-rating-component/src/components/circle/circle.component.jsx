@@ -1,17 +1,18 @@
+import { useRef } from 'react';
+
 import './circle.styles.css';
 
-// const Circle = ({ svg, svgSource, numbers, props }) => {
 const Circle = (props) => {
         let circleType;
-        let selectedRating = 0;
         let toggle = 0;
+        const selectedRating = useRef(0);
 
         const setRating = (id) => {
                 toggleButtonColor(id);
         }
 
         const setClickedRating = (id) => {
-                selectedRating = id;
+                selectedRating.current = id;
                 props.rating(id);
         }
 
@@ -20,14 +21,14 @@ const Circle = (props) => {
                 document.getElementById(id).classList.remove("circle-hover");
 
                 // check if rating is selected and remove the old selected
-                if (selectedRating) {
-                        document.getElementById(selectedRating).classList.remove("circle-clicked");
-                        document.getElementById(selectedRating).classList.add("circle-hover");
+                if (selectedRating.current) {
+                        document.getElementById(selectedRating.current).classList.remove("circle-clicked");
+                        document.getElementById(selectedRating.current).classList.add("circle-hover");
                 }
                 // check if the same rating is clicked and remove circle-clicked class
-                if (selectedRating === id) {
-                        document.getElementById(selectedRating).classList.remove("circle-clicked");
-                        document.getElementById(selectedRating).classList.add("circle-hover");
+                if (selectedRating.current === id) {
+                        document.getElementById(selectedRating.current).classList.remove("circle-clicked");
+                        document.getElementById(selectedRating.current).classList.add("circle-hover");
                         setClickedRating(0);
                 } else {
                         setClickedRating(id);
