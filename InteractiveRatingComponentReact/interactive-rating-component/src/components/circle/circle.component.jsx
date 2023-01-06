@@ -4,7 +4,7 @@ import './circle.styles.css';
 
 const Circle = (props) => {
         let circleType;
-        let toggle = 0;
+        let toggleStar = 0;
         const selectedRating = useRef(0);
 
         const setRating = (id) => {
@@ -35,21 +35,21 @@ const Circle = (props) => {
                 }
         }
 
-        const toggleStar = () => {
-                if (toggle) {
+        const startIconClicked = () => {
+                if (toggleStar) {
                         document.getElementById("star").classList.remove("star-color-clicked");
                         document.getElementById("star").classList.add("star-color-unclicked");
-                        toggle = 0;
+                        toggleStar = 0;
                 } else {
                         document.getElementById("star").classList.add("star-color-clicked");
                         document.getElementById("star").classList.remove("star-color-unclicked");
-                        toggle = 1;
+                        toggleStar = 1;
                 }
         }
 
         if (props.svg === 'true') {
                 circleType =
-                        <div className='circle' onClick={toggleStar}>
+                        <div className='circle' onClick={startIconClicked}>
                                 <div className='star'>
                                         <img id='star' className='star-size star-color-unclicked' src={props.svgSource} alt='Star' />
                                 </div>
