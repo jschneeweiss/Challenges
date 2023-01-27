@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Mountains</title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        margin: auto;
+        background-color: #41418f;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;     
+    }
+
+    div {
+        width: 300px;
+        height: 300px;
+        background-color: #fce27c;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    div::before {
+        content: "";
+        position: absolute;
+        background-color: #f75c31;
+        height: 200px;
+        width: 200px;
+        transform: rotate(45deg);
+        bottom: 0;
+        right: 0;
+    }
+
+    div::after {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 100px;
+        background-color: #ff4916;
+        transform: rotate(45deg);
+        bottom: -40px;
+        left: -20px;
+    }
+
+    Button {
+        padding: 5px 20px;
+        border-radius: 10px;
+        background-color: #000000;
+        font-weight: bold;
+        color: white;        
+    }
+</style>
+<script>
+    function changeLight() {
+        var button = document.getElementById("button");
+        var circle = document.getElementById("circle");
+
+        if (button.textContent === "Day") {
+            button.textContent = "Night";
+            button.style.backgroundColor = "#000000";
+            button.style.color = "white";
+            circle.style.backgroundColor = "#fce27c";            
+        }        
+        else {
+            button.textContent = "Day";
+            button.style.backgroundColor = "#dcdce7";
+            button.style.color = "black";
+            circle.style.backgroundColor = "#057ef8";
+        }
+    }
+</script>
+<body>
+    <div id="circle"></div>
+    <Button onclick="changeLight()" id="button">Night</Button>
+</body>
+
+</html>
