@@ -4,19 +4,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
 }
 
 .battery-case {
     width: 200px;
     height: 100px;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 20px;
 }
 
 .battery-dot {
     width: 10px;
     height: 50px;
-    background-color: black;
+    background-color: white;
     border-radius: 0 15px 15px 0;
 }
 
