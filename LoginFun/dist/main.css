@@ -1,0 +1,47 @@
+:root {
+  --button-position-x: 0;
+  --button-position-y: 0;
+}
+
+body {
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  background: linear-gradient(180deg, rgb(218, 214, 214) 30%, rgb(139, 139, 139) 70%);
+  height: 12.5rem;
+  width: 12rem;
+  border-radius: 1rem;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+.login__button {
+  visibility: hidden;
+}
+.login__button-position {
+  transform: translate(var(--button-position-x), var(--button-position-y));
+}
+.login__button-position:hover {
+  transform: translate(var(--button-position-x), var(--button-position-y));
+}
+.login__input {
+  margin: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  padding: 0.2rem 0.25rem;
+  box-shadow: 0.1rem 0.1rem black;
+}
+
+/*# sourceMappingURL=main.css.map */

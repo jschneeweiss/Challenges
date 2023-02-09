@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./dist/main.css" type="text/css" rel="stylesheet">
+    <title>Create an Account</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create an Account</h1>
+        <div class="login">
+            <input class="login__input" onfocusout="checkEmail()" type="email" id="email" title="Email" placeholder="Email"
+                onkeyup="showButton()">
+            <input class="login__input" type="password" id="psw" title="Password" placeholder="Password"
+                onkeyup="showButton()" pattern=".+@email\.com" required>
+            <button class="login__button login__input login__button-position" id="button" onmouseover="checkPassword(0)"
+                onclick="checkPassword(1)" type="submit">Create</button>
+        </div>
+    </div>
+</body>
+<script>
+    function checkEmail() {
+        let emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        let email = document.getElementById("email").value;
+
+        return email.match(emailRegex) ? true : false;
+    }
+
+    function checkPassword(isclicked) {
+        let password = document.getElementById("psw").value;
+
+        let passw = /^[A-Za-z]\w{7,14}$/;
+        if (password.match(passw)) {
+            if (isclicked)
+                alert("You created an account :)");
+            document.documentElement.style.setProperty('--button-position-x', "0");
+            document.documentElement.style.setProperty('--button-position-y', "0");
+        }
+        else {
+            let xPosition = random(-5, 5);
+            let yPosition = random(-10, 10);
+            document.documentElement.style.setProperty('--button-position-x', xPosition + "rem");
+            document.documentElement.style.setProperty('--button-position-y', yPosition + "rem");
+        }
+    }
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function showButton() {
+        let password = document.getElementById("psw").value;
+        let email = document.getElementById("email").value;
+
+        if ((password !== "") && checkEmail()) {
+            document.getElementsByClassName("container")[0].style = "height: 14.5rem";
+            document.getElementsByClassName("login__button")[0].style = "visibility: visible";
+
+            let password = document.getElementById("psw").value;
+
+            let passw = /^[A-Za-z]\w{7,14}$/;
+            if (password.match(passw)) {
+                document.documentElement.style.setProperty('--button-position-x', "0");
+                document.documentElement.style.setProperty('--button-position-y', "0");
+            }
+        } else {
+            document.getElementsByClassName("container")[0].style = "height: 12.5rem";
+            document.getElementsByClassName("login__button")[0].style = "visibility: hidden";
+        }
+    }
+</script>
+
+</html>
