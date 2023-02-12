@@ -1,8 +1,5 @@
 function checkEmail() {
-    let emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-    let email = document.getElementById("email").value;
-
-    return email.match(emailRegex) ? true : false;
+    return document.getElementById("email").validity.valid;
 }
 
 function checkPassword(isClicked) {

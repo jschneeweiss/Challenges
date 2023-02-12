@@ -13,9 +13,9 @@
 <body>
     <div class="container">
         <h1>Create an Account</h1>
-        <div class="login">
+        <form class="login">
             <input class="login__input" onfocusout="checkEmail()" type="email" id="email" title="Email"
-                placeholder="Email" onkeyup="showButton()">
+                placeholder="Email" onkeyup="showButton()" required>
             <input class="login__input" type="password" id="psw" title="Password" placeholder="Password"
                 onkeyup="showButton()" pattern=".+@email\.com" required>
             <div class="login__passwordchecklist">
@@ -27,7 +27,7 @@
             </div>
             <button class="login__button login__input login__button-position" id="button" onmouseover="checkPassword(0)"
                 onclick="checkPassword(1)" type="submit">Create</button>
-        </div>
+        </form>
     </div>
 
     <div id="modal" class="modal">
