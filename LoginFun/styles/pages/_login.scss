@@ -46,4 +46,16 @@ h1 {
         padding: 0.2rem 0.25rem;
         box-shadow: 0.1rem 0.1rem black;
     }
+
+    &__passwordchecklist {
+        visibility: hidden;       
+        color: red;
+
+        &-list {
+            list-style-type: none;
+            padding-left: 1.5rem;
+            letter-spacing: 0.05rem;
+            text-shadow: 0.02rem 0.02rem black;
+        }
+    }
 }

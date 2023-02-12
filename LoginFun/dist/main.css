@@ -43,6 +43,16 @@ h1 {
   padding: 0.2rem 0.25rem;
   box-shadow: 0.1rem 0.1rem black;
 }
+.login__passwordchecklist {
+  visibility: hidden;
+  color: red;
+}
+.login__passwordchecklist-list {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  letter-spacing: 0.05rem;
+  text-shadow: 0.02rem 0.02rem black;
+}
 
 .modal {
   display: none;

@@ -18,6 +18,13 @@
                 placeholder="Email" onkeyup="showButton()">
             <input class="login__input" type="password" id="psw" title="Password" placeholder="Password"
                 onkeyup="showButton()" pattern=".+@email\.com" required>
+            <div class="login__passwordchecklist">
+                <ul class="login__passwordchecklist-list">
+                    <li id="list-one">At least 8 letters</li>
+                    <li id="list-two">At least 1 upper letter</li>
+                    <li id="list-three">At least 1 number</li>
+                </ul>
+            </div>
             <button class="login__button login__input login__button-position" id="button" onmouseover="checkPassword(0)"
                 onclick="checkPassword(1)" type="submit">Create</button>
         </div>
@@ -26,10 +33,10 @@
     <div id="modal" class="modal">
         <!-- Modal content -->
         <div class="modal__content">
-          <span class="modal__content-close" onclick="closeModal()" id="closeButton">&times;</span>
-          <img class="modal__content-img" src="img/congrates.jpg" />
-        </div>     
-      </div>
+            <span class="modal__content-close" onclick="closeModal()" id="closeButton">&times;</span>
+            <img class="modal__content-img" src="img/congrates.jpg" />
+        </div>
+    </div>
 </body>
 
 </html>
