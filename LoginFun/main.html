@@ -13,11 +13,11 @@
 <body>
     <div class="container">
         <h1>Create an Account</h1>
-        <form class="login">
+        <div class="login">
             <input class="login__input" onfocusout="checkEmail()" type="email" id="email" title="Email"
-                placeholder="Email" onkeyup="showButton()" required>
+                placeholder="Email" autocomplete="off" onkeyup="showButton()" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
             <input class="login__input" type="password" id="psw" title="Password" placeholder="Password"
-                onkeyup="showButton()" pattern=".+@email\.com" required>
+                onkeyup="showButton()" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$" required>
             <div class="login__passwordchecklist">
                 <ul class="login__passwordchecklist-list">
                     <li id="list-one">At least 8 letters</li>
@@ -27,7 +27,7 @@
             </div>
             <button class="login__button login__input login__button-position" id="button" onmouseover="checkPassword(0)"
                 onclick="checkPassword(1)" type="submit">Create</button>
-        </form>
+        </div>
     </div>
 
     <div id="modal" class="modal">

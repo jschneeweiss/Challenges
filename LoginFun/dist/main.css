@@ -43,6 +43,19 @@ h1 {
   padding: 0.2rem 0.25rem;
   box-shadow: 0.1rem 0.1rem black;
 }
+.login__input:invalid {
+  border-color: red;
+}
+.login__input:required:valid {
+  border-color: green;
+  border-width: medium;
+}
+.login__input:focus:invalid {
+  background-color: lightsalmon;
+}
+.login__input:focus:valid {
+  background-color: lightgreen;
+}
 .login__passwordchecklist {
   visibility: hidden;
   color: red;

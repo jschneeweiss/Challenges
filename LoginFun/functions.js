@@ -7,7 +7,7 @@ function checkPassword(isClicked) {
     let modal = document.getElementById("modal");
 
     let passw = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,32}$/;
-    
+
     if (password.match(passw)) {
         if (isClicked) {
             clearInputs();
@@ -17,15 +17,33 @@ function checkPassword(isClicked) {
         resetButtonPosition();
     }
     else {
-        let xPosition = random(-5, 5);
-        let yPosition = random(-10, 10);
-        document.documentElement.style.setProperty('--button-position-x', xPosition + "rem");
-        document.documentElement.style.setProperty('--button-position-y', yPosition + "rem");
+        let offset = 150;
+        let xPosition = random(((window.innerWidth / 2) - offset) * -1, (window.innerWidth / 2) - offset, "x");
+        let yPosition = random(((window.innerHeight / 1.5) - offset) * -1, (window.innerHeight / 2) - offset, "y");
+        document.documentElement.style.setProperty('--button-position-x', xPosition + "px");
+        document.documentElement.style.setProperty('--button-position-y', yPosition + "px");
     }
 }
 
-function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+function random(min, max, direction) {
+    let foundNumber = false;
+    let randomNumber = 0;
+
+    while (!foundNumber) {
+        randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        
+        if (direction === "x") {
+            if (randomNumber > 180 || randomNumber < -180) {
+                foundNumber = true;
+            }
+        } else {
+            if (randomNumber > 40 || randomNumber < -300) {
+                foundNumber = true;
+            }
+        }
+    }
+
+    return randomNumber;
 }
 
 function showButton() {
